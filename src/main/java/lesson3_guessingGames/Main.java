@@ -1,4 +1,4 @@
-package lesson3;
+package lesson3_guessingGames;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        guessTheNumber(3, 0, 9);
+        guessTheNumber(3, 0, 9);
         guessTheWord(15, '#');
         scanner.close();
     }
