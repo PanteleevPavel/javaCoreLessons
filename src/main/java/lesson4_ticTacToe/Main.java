@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    private static final int SIZE = 10;
+    private static final int SIZE = 5;
     private static final int DOTS_TO_WIN = 4;
     private static final char DOT_EMPTY = '-';
     private static final char DOT_X = 'X';
@@ -53,14 +53,15 @@ public class Main {
     }
 
     private static void printMap() {
-        for (int i = 0; i <= SIZE; i++) {
-            System.out.print(i + " ");
+        System.out.print("   ");
+        for (int i = 0; i < SIZE; i++) {
+            System.out.print(i + 1 + "x ");
         }
         System.out.println();
         for (int i = 0; i < SIZE; i++) {
-            System.out.print(i + 1 + " ");
+            System.out.print(i + 1 + "y ");
             for (int j = 0; j < SIZE; j++) {
-                System.out.print(map[i][j]+" ");
+                System.out.print(map[i][j]+"  ");
             }
             System.out.println();
         }
@@ -85,9 +86,8 @@ public class Main {
     }
 
     private static boolean isWin(char symbols) {
-        //Проверка по х
+        //Проверка по горизонтали
         int winStreak;
-        int cache = 0;
         int xCoordinate = 0;
         for (int i = 0; i < SIZE; i++) {
             winStreak = 0;
@@ -102,7 +102,7 @@ public class Main {
                 }
             }
         }
-        //Проверка по у
+        //Проверка по вертикали
         winStreak = 0;
         while (xCoordinate < SIZE) {
             for (int i = 0; i < SIZE; i++) {
@@ -117,65 +117,51 @@ public class Main {
             }
             xCoordinate++;
         }
-        xCoordinate = 0;
-        winStreak = 0;
         //Проверка по первой диагонали
-        while (xCoordinate < SIZE - 1) {
-            for (int i = 0; i < SIZE; i++) {
-                if (map[i][xCoordinate] == symbols) {
+        winStreak = 0;
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                if (map[i][j] == symbols && i + 1 < SIZE && j + 1 < SIZE) {
                     winStreak++;
-                    int nextY = i;
-                    int nextX = xCoordinate;
-                    int won = winStreak;
-                    for (int j = SIZE - i; j > 0; j--) {
-                        if (map[nextY++][nextX++] == symbols) {
-                            won++;
-                            if (won == DOTS_TO_WIN + 1) {
+                    int newX = j;
+                    int newY = i;
+                    int newWinStreak = winStreak;
+                    while (newX < SIZE - 1 && newY < SIZE - 1) {
+                        if (map[++newY][++newX] == symbols) {
+                            newWinStreak++;
+                            if (newWinStreak == DOTS_TO_WIN) {
                                 return true;
                             }
                         } else {
-                            j = 0;
+                            break;
                         }
                     }
-                    if (winStreak == DOTS_TO_WIN) {
-                        return true;
-                    }
-                } else {
                     winStreak = 0;
                 }
             }
-            xCoordinate++;
         }
-        xCoordinate = 0;
-        winStreak = 0;
         //Проверка по второй диагонали
-        while (xCoordinate < SIZE - 1) {
-            for (int i = 0; i < SIZE; i++) {
-                if (map[i][xCoordinate] == symbols) {
+        winStreak = 0;
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                if (map[i][j] == symbols && i + 1 < SIZE && j + 1 < SIZE) {
                     winStreak++;
-                    int nextY = i;
-                    int nextX = xCoordinate;
-                    int won = winStreak;
-                    for (int j = SIZE + 1; j > 0; j--) {
-                        if (nextY > 0) {
-                            if (map[nextY--][nextX++] == symbols) {
-                                won++;
-                                if (won == DOTS_TO_WIN + 1) {
-                                    return true;
-                                }
-                            } else {
-                                j = 0;
+                    int newX = j;
+                    int newY = i;
+                    int newWinStreak = winStreak;
+                    while (newX < SIZE - 1 && newY > 0) {
+                        if (map[--newY][++newX] == symbols) {
+                            newWinStreak++;
+                            if (newWinStreak == DOTS_TO_WIN) {
+                                return true;
                             }
+                        } else {
+                            break;
                         }
                     }
-                    if (winStreak == DOTS_TO_WIN) {
-                        return true;
-                    }
-                } else {
                     winStreak = 0;
                 }
             }
-            xCoordinate++;
         }
         return false;
     }
@@ -197,7 +183,7 @@ public class Main {
             x = rand.nextInt(SIZE);
             y = rand.nextInt(SIZE);
         } while (isCellInvalid(x, y));
-        System.out.printf("Компьютер походил в точку %d %d\n", x + 1, y + 1);
         map[y][x] = DOT_O;
+        System.out.printf("Компьютер походил в точку %d %d\n", x + 1, y + 1);
     }
 }
