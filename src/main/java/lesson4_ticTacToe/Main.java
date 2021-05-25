@@ -11,7 +11,7 @@ public class Main {
     private static final char DOT_X = 'X';
     private static final char DOT_O = 'O';
     private static char[][] map;
-    private static final Scanner sc = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     private static final Random rand = new Random();
 
 
@@ -40,6 +40,7 @@ public class Main {
                 break;
             }
         }
+        scanner.close();
         System.out.println("Игра окончена");
     }
 
@@ -72,9 +73,9 @@ public class Main {
         int x, y;
         do {
             System.out.println("Введите координату по горизонтали");
-            x = sc.nextInt() - 1;
-            System.out.println("Введите координату по веортикали");
-            y = sc.nextInt() - 1;
+            x = scanner.nextInt() - 1;
+            System.out.println("Введите координату по вертикали");
+            y = scanner.nextInt() - 1;
         } while (isCellInvalid(x, y));
         map[y][x] = DOT_X;
     }
