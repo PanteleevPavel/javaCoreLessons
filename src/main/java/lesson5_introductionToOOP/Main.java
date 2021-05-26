@@ -23,7 +23,7 @@ public class Main {
 
         System.out.println("РАСЧЁТ ОКОНЧЕН\n");
 
-        //Следующий цикл для проверки всегоЮ что было в массиве
+        //Следующий цикл для проверки всего, что было в массиве
         for (int i = 0; i < listEmployee.length; i++) {
             System.out.println("Сотрудник № " + (i + 1));
             Employee.outputToTheConsoleObject(listEmployee[i]);

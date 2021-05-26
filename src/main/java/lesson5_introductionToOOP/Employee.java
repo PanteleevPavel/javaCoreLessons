@@ -122,13 +122,13 @@ public class Employee {
     }
 
     public static void outputToTheConsoleObject(Employee name) {
-        System.out.println("Имя " + name.getFirstName());
-        System.out.println("Отчество " + name.getPatronymic());
-        System.out.println("Фамилия " + name.getLastName());
-        System.out.println("email " + name.getEmail());
-        System.out.println("Номер телефона " + name.getPhoneNumber());
-        System.out.println("Должность " + name.getPost());
-        System.out.println("Зарплата " + name.getSalary());
-        System.out.println("Возраст " + name.getAge());
+        System.out.println("Имя: " + name.getFirstName());
+        System.out.println("Отчество: " + name.getPatronymic());
+        System.out.println("Фамилия: " + name.getLastName());
+        System.out.println("email: " + name.getEmail());
+        System.out.println("Номер телефона: " + name.getPhoneNumber());
+        System.out.println("Должность: " + name.getPost());
+        System.out.println("Зарплата: " + name.getSalary());
+        System.out.println("Возраст: " + name.getAge());
     }
 }
