@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Метод для генерации сотрудников, чтобы хардкодить)))
+        //Метод для генерации сотрудников, чтобы не хардкодить)))
         createNewEmployee(listEmployee.length);
 
         //Цикл для вывода сотрудников старше 40 лет
