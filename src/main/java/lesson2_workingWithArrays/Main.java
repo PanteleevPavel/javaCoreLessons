@@ -55,11 +55,11 @@ public class Main {
 
     private static void fourth() {
         System.out.println('\n' + "4 Задание");
-        int[][] squareArray = new int[10][10];
+        int[][] squareArray = new int[7][7];
         for (int i = 0; i < squareArray.length; i++) {
             int[] line = squareArray[i];
             for (int j = 0; j < line.length; j++) {
-                if (i == j || i + j == 9) {
+                if (i == j || i + j == squareArray.length - 1) {
                     line[j] = 1;
                 }
             }
