@@ -1,6 +1,6 @@
 package lesson6_advancedOOP;
 
-import lesson6_advancedOOP.Animals.*;
+import lesson6_advancedOOP.animals.*;
 
 public class Main {
     public static void main(String[] args) {

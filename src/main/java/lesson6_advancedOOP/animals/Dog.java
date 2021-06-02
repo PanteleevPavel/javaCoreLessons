@@ -1,4 +1,4 @@
-package lesson6_advancedOOP.Animals;
+package lesson6_advancedOOP.animals;
 
 public abstract class Dog extends Animal {
 
