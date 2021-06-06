@@ -56,7 +56,7 @@ public class Main {
                             }
                         } else if (((Obstacle) obstacles.get(i)).getObstacleName().equals("Wall")) {
                             if (((Jump) participants.get(j)).getMaxJumpHeight() < ((Obstacle) obstacles.get(i)).getObstacleSize()) {
-                                System.out.println("К сожалению, " + (j + 1) + " участник выбывает из соревнований");
+                                System.out.println("К сожалению, предыдущий участник выбывает из соревнований");
                                 participants.remove(participants.get(j));
                                 j--;
                             }
