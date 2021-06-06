@@ -1,6 +1,6 @@
 package lesson7_catsTryEat;
 
-import lesson7_catsTryEat.Cats.Cat;
+import lesson7_catsTryEat.cats.Cat;
 import lesson7_catsTryEat.tablewares.Plate;
 
 public class Main {

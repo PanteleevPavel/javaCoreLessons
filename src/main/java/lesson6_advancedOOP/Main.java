@@ -12,6 +12,7 @@ public class Main {
         animal[2] = new DogPitBull();
         animal[3] = new DogShepherd();
 
+        //Попросим животных выполнять упражнения сначала с заведомо слишком высоким значением, затем с минимальным.
         for (int i = 0; i < animal.length; i++) {
             System.out.println(animal[i].animalsPerformPhysicalEducation(1000, 1));
         }

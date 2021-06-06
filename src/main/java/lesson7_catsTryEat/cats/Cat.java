@@ -1,4 +1,4 @@
-package lesson7_catsTryEat.Cats;
+package lesson7_catsTryEat.cats;
 
 import lesson7_catsTryEat.tablewares.Plate;
 
