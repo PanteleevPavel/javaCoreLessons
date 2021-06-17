@@ -1,13 +1,12 @@
 package lesson10_collections;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 
 public class Main {
 
-    private static String[] wordsArray = {"Машина", "Самолёт", "Трактор", "Машина", "Поезд", "Машина", "Велосипед", "Самокат",
+    private static final String[] wordsArray = {"Машина", "Самолёт", "Трактор", "Машина", "Поезд", "Машина", "Велосипед", "Самокат",
             "Спорткар", "Трактор", "Трамвай", "Троллейбус", "Троллейбус", "Самосвал", "Поезд", "Мотоцикл"};
 
     public static void main(String[] args) {
@@ -39,7 +38,5 @@ public class Main {
         phoneDirectory.get("Boris");
         phoneDirectory.get("Vladimir");
         phoneDirectory.get("Pavel");
-
     }
 }
-
