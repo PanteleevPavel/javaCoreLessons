@@ -18,10 +18,10 @@ public class Main {
 
         System.out.println("Второе задание:");
         HashMap<String, Integer> countingWords = new HashMap<>();
-        for (int i = 0; i < wordsArray.length; i++) {
-            if (countingWords.containsKey(wordsArray[i])) {
-                countingWords.put(wordsArray[i], countingWords.get(wordsArray[i]) + 1);
-            } else countingWords.put(wordsArray[i], 1);
+        for (String s : wordsArray) {
+            if (countingWords.containsKey(s)) {
+                countingWords.put(s, countingWords.get(s) + 1);
+            } else countingWords.put(s, 1);
         }
         System.out.println(countingWords);
         System.out.println();
