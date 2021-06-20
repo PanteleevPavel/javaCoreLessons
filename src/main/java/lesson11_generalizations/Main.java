@@ -1,5 +1,8 @@
 package lesson11_generalizations;
 
+import lesson11_generalizations.products.Apple;
+import lesson11_generalizations.products.Orange;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -20,7 +23,6 @@ public class Main {
         System.out.println();
 
         System.out.println("Второе задание:");
-
         //Можем так (Но так будет не удобно потом работать с этими листами из за не явного указания типа)
         ArrayList newList = arrayToArrayList(intArr);
         ArrayList newList2 = arrayToArrayList(stringArr);
@@ -37,6 +39,51 @@ public class Main {
         System.out.println("Преобразовали String массив в ArrayList: " + newList2);
         System.out.println("Преобразовали Integer массив в типизированный ArrayList: " + newList3);
         System.out.println("Преобразовали String массив в типизированный ArrayList: " + newList4);
+        System.out.println();
+
+        System.out.println("Третье задание:");
+        //Создаём фруктики
+        Apple apple1 = new Apple();
+        Apple apple2 = new Apple();
+        Apple apple3 = new Apple();
+        Orange orange1 = new Orange();
+        Orange orange2 = new Orange();
+        Orange orange3 = new Orange();
+
+        //Создаём коробки
+        Box<Apple> appleBox1 = new Box<>();
+        Box<Apple> appleBox2 = new Box<>();
+        Box<Orange> orangeBox1 = new Box<>();
+        Box<Orange> orangeBox2 = new Box<>();
+
+        //Далее кладём фрукты в коробки
+        appleBox1.add(apple1);
+        appleBox1.add(apple2);
+        appleBox1.add(apple3);
+
+        appleBox2.add(apple1);
+        appleBox2.add(apple2);
+        appleBox2.add(apple3);
+
+        orangeBox1.add(orange1);
+        orangeBox1.add(orange2);
+        orangeBox1.add(orange3);
+
+        orangeBox2.add(orange1);
+        orangeBox2.add(orange2);
+        orangeBox2.add(orange3);
+
+        //Далее вывод результатов функций, для проверки
+        System.out.println("Вес первой коробки с яблоками: " + appleBox1.getBoxWeight());
+        System.out.println("Вес второй коробки с яблоками: " + appleBox2.getBoxWeight());
+        System.out.println("Вес первой коробки с апельсинами: " + orangeBox1.getBoxWeight());
+        System.out.println("Вес второй коробки с апельсинами: " + orangeBox2.getBoxWeight());
+
+        System.out.println("Вес коробок с яблоками одинаковый? " + appleBox1.compare(appleBox2));
+        appleBox1.pourInto(appleBox2); // Пересып яблок из первой коробки во вторую
+        System.out.println("После пересыпа яблок, вес первой коробки стал: " + appleBox1.getBoxWeight());
+        System.out.println("После пересыпа яблок, вес второй коробки стал: " + appleBox2.getBoxWeight());
+
     }
 
     public static <arr> void swappingElements(arr[] array, int first, int second) {
