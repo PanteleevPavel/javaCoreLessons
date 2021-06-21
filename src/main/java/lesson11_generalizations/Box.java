@@ -18,6 +18,7 @@ public class Box <FruitType extends Fruit> {
     // потому, что получение веса идёт только из этого метода
     // и не обязательно пересчитывать его каждый раз при добавлении/удалении предмета :-)
     public float getBoxWeight() {
+        boxWeight = 0;
         if (fruitInBox.size() > 0) {
             for (FruitType ourFruit : fruitInBox) {
                 try {

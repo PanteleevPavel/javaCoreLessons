@@ -79,7 +79,7 @@ public class Main {
         System.out.println("Вес первой коробки с апельсинами: " + orangeBox1.getBoxWeight());
         System.out.println("Вес второй коробки с апельсинами: " + orangeBox2.getBoxWeight());
 
-        System.out.println("Вес коробок с яблоками одинаковый? " + appleBox1.compare(appleBox2));
+        System.out.println("Вес коробок с яблоками одинаковый? -" + appleBox1.compare(appleBox2));
         appleBox1.pourInto(appleBox2); // Пересып яблок из первой коробки во вторую
         System.out.println("После пересыпа яблок, вес первой коробки стал: " + appleBox1.getBoxWeight());
         System.out.println("После пересыпа яблок, вес второй коробки стал: " + appleBox2.getBoxWeight());
