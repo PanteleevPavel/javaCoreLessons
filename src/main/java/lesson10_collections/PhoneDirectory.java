@@ -8,10 +8,10 @@ public class PhoneDirectory {
     private final HashMap<String, HashSet<String>> phoneDirectory = new HashMap<>();
 
     public void add(String name, String phone) {
-        HashSet<String> receivedNumber = new  HashSet<>(Collections.singleton(phone));
-        try {
+        if (phoneDirectory.containsKey(name)) {
             phoneDirectory.get(name).add(phone);
-        } catch (Exception e) {
+        } else {
+            HashSet<String> receivedNumber = new HashSet<>(Collections.singleton(phone));
             phoneDirectory.put(name, receivedNumber);
         }
     }
