@@ -9,7 +9,6 @@ public class Main {
     public static final CyclicBarrier cb1 = new CyclicBarrier(CARS_COUNT);
     public static final CountDownLatch cdl1 = new CountDownLatch(CARS_COUNT);
     public static final CountDownLatch cdl2 = new CountDownLatch(CARS_COUNT);
-    public static final CountDownLatch winner = new CountDownLatch(1);
     public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Подготовка!!!");
         Race race = new Race(new Road(60), new Tunnel(), new Road(40), new FinishLine());
